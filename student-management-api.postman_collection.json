@@ -1,0 +1,895 @@
+{
+	"info": {
+		"_postman_id": "5bc5a95e-5a8f-4f74-b009-c5278626eed3",
+		"name": "student-management-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19681688"
+	},
+	"item": [
+		{
+			"name": "smoke-test",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "getAllUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getAllUsers",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/users",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"usuarios encontrados\",\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "getUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/users/22222222-2222-2222-2222-222222222222",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"22222222-2222-2222-2222-222222222222"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getUserById",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/users/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"id\": \"3\",\n    \"name\": \"castillo\",\n    \"email\": \"castillo@hotmail.com\",\n    \"user_type_id\": 2\n}"
+								}
+							]
+						},
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"marisol\",\n    \"email\":\"marisol@hotmail.com\",\n    \"role\": \"STUDENT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "createUser",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\":\"1\",\n    \"name\":\"fabian\",\n    \"email\":\"fabian@hotmail.com\",\n    \"user_type_id\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/users",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"1\",\n    \"name\": \"fabian\",\n    \"email\": \"fabian@hotmail.com\",\n    \"user_type_id\": 1\n}"
+								}
+							]
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"boca\",\n    \"email\":\"boca@hotmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/users/22222222-2222-2222-2222-222222222222ajksdhakjsdh",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"22222222-2222-2222-2222-222222222222ajksdhakjsdh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "updateUser",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"boca\",\n    \"email\":\"boca@hotmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/users/22222222-2222-2222-2222-222222222222",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users",
+												"22222222-2222-2222-2222-222222222222"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"id\": \"22222222-2222-2222-2222-222222222222\",\n    \"name\": \"boca\",\n    \"email\": \"boca@hotmail.com\",\n    \"role\": \"STUDENT\",\n    \"created_at\": \"2024-11-11T01:42:56.702Z\",\n    \"updated_at\": \"2024-11-11T01:42:56.000Z\"\n}"
+								},
+								{
+									"name": "updateUser | Error - Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"boca\",\n    \"email\":\"boca@hotmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/users/22222222-2222-2222-2222-222222222222ajksdhakjsdh",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users",
+												"22222222-2222-2222-2222-222222222222ajksdhakjsdh"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"message\": \"Record to update not found.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/users/22222222-2222-2222-2222-222222222222",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"22222222-2222-2222-2222-222222222222"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "deleteUser",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3000/api/users/2",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"users",
+												"2"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Subjects",
+					"item": [
+						{
+							"name": "getAllSubjects",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/subjects",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"subjects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSubjectById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/subjects/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"subjects",
+										"0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSubject",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Matemáticas Avanzadas\",\n  \"code\": \"MATH101\",\n  \"credits\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/subjects",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"subjects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSubject",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Matemáticas Avanzadas\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/subjects/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"subjects",
+										"0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSubject",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/subjects/0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"subjects",
+										"0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Classes",
+					"item": [
+						{
+							"name": "getAllClasses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getClassById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes/0b0b0b0b-0b0b-0b0b-0b0b-0b0b0b0b0b0b",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"0b0b0b0b-0b0b-0b0b-0b0b-0b0b0b0b0b0b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createClass",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Ciencias sociales\",\n  \"schedule\": \"Lunes y Miércoles 10:00-12:00\",\n  \"teacher_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"subject_id\": \"0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/classes",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Ciencias sociales\",\n  \"schedule\": \"Lunes y Miércoles 10:00-12:00\",\n  \"teacher_id\": \"be814e88-e68f-432b-b8c4-f18bca098c97\",\n  \"subject_id\": \"2324735c-cdea-460b-bba4-161eeb580bb8\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/classes",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"classes"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Failed - teacher not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Ciencias sociales\",\n  \"schedule\": \"Lunes y Miércoles 10:00-12:00\",\n  \"teacher_id\": \"be814e88-e68f-432b-b8c4-f18bca098c97\",\n  \"subject_id\": \"2324735c-cdea-460b-bba4-161eeb580bb8\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/classes",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"classes"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "failed - id is not teacher",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Ciencias sociales\",\n  \"schedule\": \"Lunes y Miércoles 10:00-12:00\",\n  \"teacher_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"subject_id\": \"2324735c-cdea-460b-bba4-161eeb580bb8\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/classes",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"classes"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Failed - subject not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Ciencias sociales\",\n  \"schedule\": \"Lunes y Miércoles 10:00-12:00\",\n  \"teacher_id\": \"12121212-1212-1212-1212-121212121212\",\n  \"subject_id\": \"2324735c-cdea-460b-bba4-161eeb580bb8\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3000/api/classes",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"classes"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "updateClass",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Clase de Física Avanzada\",\n  \"schedule\": \"Lunes y Miércoles 12:00-14:00\",\n  \"teacherId\": \"be814e88-e68f-432b-b8c4-f18bca098c97\",\n  \"subjectId\": \"2324735c-cdea-460b-bba4-161eeb580bb8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/classes/dace5770-046d-4b56-88d2-0b09272d1d79",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"dace5770-046d-4b56-88d2-0b09272d1d79"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteClass",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes/dace5770-046d-4b56-88d2-0b09272d1d79",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"dace5770-046d-4b56-88d2-0b09272d1d79"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getClassWithEnrollments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes/1b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b/enrollments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"1b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b",
+										"enrollments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllClassesWithDetails",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes/details",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enrollment",
+					"item": [
+						{
+							"name": "getDetails",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/classes/details",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"classes",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllEnrollments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/enrollments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"enrollments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEnrollmentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/enrollments/2c2c2c2c-2c2c-2c2c-2c2c-2c2c2c2c2c2c",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"enrollments",
+										"2c2c2c2c-2c2c-2c2c-2c2c-2c2c2c2c2c2c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createEnrollment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"classId\": \"9fef826e-73ca-4663-92e6-e530de543db1\",\n  \"studentId\": \"92c24578-d599-491a-929e-dee2aa8d7abe\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/enrollments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"enrollments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteEnrollment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/enrollments/22009c9c-adf1-4e3d-bf06-7fe2c2fea6c3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"enrollments",
+										"22009c9c-adf1-4e3d-bf06-7fe2c2fea6c3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStudentEnrollmentsWithCosts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/enrollments/student/11111111-1111-1111-1111-111111111111",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"enrollments",
+										"student",
+										"11111111-1111-1111-1111-111111111111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
