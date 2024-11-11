@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  role       user_role // Enum: 'STUDENT' o 'TEACHER'
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  classesTaught classes[] @relation("TeacherRelation") // Relación con clases que enseña
+  classesEnrolled class_enrollments[] // Relación con clases en las que está inscrito
+}
+
+enum user_role {
+  STUDENT
+  TEACHER
+}
+
+model subjects {
+  id        String   @id @default(uuid())
+  name      String
+  code      String   @unique
+  credits   Int      @default(3)
+  classes   classes[]  // Relación con las clases
+}
+
+model classes {
+  id          String   @id @default(uuid())
+  name        String
+  schedule    String   // Horario de la clase
+  teacher_id   String   // FK a User, debe ser un profesor
+  teacher     users     @relation("TeacherRelation", fields: [teacher_id], references: [id])
+  subject_id   String   // FK a Subject
+  subject     subjects  @relation(fields: [subject_id], references: [id])
+  students    class_enrollments[] // Relación con estudiantes inscritos
+}
+
+model class_enrollments {
+  id         String   @id @default(uuid())
+  class_id    String   // FK a Class
+  student_id  String   // FK a User, debe ser un estudiante
+  class      classes    @relation(fields: [class_id], references: [id])
+  student    users     @relation(fields: [student_id], references: [id])
+
+  @@unique([class_id, student_id]) // Un estudiante no puede inscribirse dos veces en la misma clase
+}
