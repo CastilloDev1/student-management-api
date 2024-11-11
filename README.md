@@ -39,6 +39,17 @@ $ npm i
 $ npm run dev
 ```
 
+
+# Postman
+Ejecición de servicio, con smoke-test y ejemplos dentro de las solicitudes esenciales de los requerimientos.
+
+- ## Folders
+  - **smoke-test**: Carpeta general para la ejecucción inmediata de toda la aplicación.
+  - **ejemplos internos**: Complementa cada solicitud re creando posibles escenarios (success y failes).
+
+
+
+
 # Manejador de Errores
 
 Este microservicio opera con un middleware para manejar los errores de express y prisma
@@ -56,6 +67,12 @@ Se emplea **CLEAN CODE**, y principios **SOLID**, con varios patrones de softwar
 
 - **shared**:
   Módulo en el cual se implementa funcionalidades de la aplicación de forma interna (middlewares, enums, custom-errors, etc.)
+
+- **student-management.collections.json**:
+  Archivo postman para ejecución de pruebas en el API.
+
+- **scripts-student-management.zip**:
+  Carpeta comprimida donde estarán los scripts en caso de ser necesarios.
 
 ## **Autores**
 
